@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+    <WatchedResource>WEB-INF/web.xml</WatchedResource>
+
+    <Realm className="org.apache.catalina.realm.JDBCRealm"
+           driverName="oracle.jdbc.OracleDriver"
+           connectionName="staff"
+           connectionPassword="mypass"
+           connectionURL="jdbc:oracle:thin:@localhost:1521:orcl"
+           userTable="USERS"
+           userNameCol="USERNAME"
+           userCredCol="PASSWORD"
+           userRoleTable="ROLES"
+           roleNameCol="PERMISSION"/>
+
+</Context>
