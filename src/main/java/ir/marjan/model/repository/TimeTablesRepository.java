@@ -44,6 +44,6 @@ public class TimeTablesRepository implements GenericRepository<TimeTable> {
     @Override
     @SuppressWarnings("unchecked")
     public List<TimeTable> select() {
-        return entityManager.createQuery("SELECT e FROM TimeTable e").getResultList();
+        return entityManager.createQuery("SELECT e FROM TimeTable e order by e.id").getResultList();
     }
 }

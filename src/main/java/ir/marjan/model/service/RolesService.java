@@ -40,6 +40,9 @@ public class RolesService implements GenericService<Role>{
         return rr.select(id);
     }
 
+    public Role findByUsername(String username){
+        return rr.select(username);
+    }
     @Override
     public List<Role> findAll() {
         return rr.select();

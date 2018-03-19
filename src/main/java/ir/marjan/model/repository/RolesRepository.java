@@ -45,4 +45,8 @@ public class RolesRepository implements GenericRepository<Role> {
     public List<Role> select() {
         return entityManager.createQuery("SELECT e FROM Role e").getResultList();
     }
+
+    public Role select(String username){
+        return (Role) entityManager.createQuery("select r from Role r where r.username=:x").setParameter("x",username).getSingleResult();
+    }
 }
