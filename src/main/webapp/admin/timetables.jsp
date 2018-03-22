@@ -14,6 +14,7 @@
 </head>
 <body>
 <%--<jsp:include page="/common/header.jsp"/>--%>
+
 <a href="/user/profile.do">Profile</a><br>
 <br>
 
@@ -31,6 +32,39 @@
             <td><c:out value="${time.exit}"/></td>
         </tr>
     </c:forEach>
+</table>
+
+<br>
+<br>
+<br>
+
+<table border="1">
+    <tr>
+        <td>Id</td>
+        <td>Firstname</td>
+        <td>Lastname</td>
+        <td>Username</td>
+        <td>Password</td>
+    </tr>
+
+    <c:forEach items="${userList}" var="list">
+        <%--<c:if test="${list.getUsername() ne 'admin'} ">--%>
+        <tr>
+
+            <%--/user/{id}/userTime.do--%>
+            <td>
+                <a href="/user/<c:out value='${list.id}'/>/userTime.do">
+                    <c:out value="${list.id}"/>
+                </a>
+            </td>
+            <td><c:out value="${list.firstname}"/></td>
+            <td><c:out value="${list.lastname}"/></td>
+            <td><c:out value="${list.username}"/></td>
+            <td><c:out value="${list.password}"/></td>
+        </tr>
+        <%--</c:if>--%>
+    </c:forEach>
+
 </table>
 
 
